@@ -1,0 +1,232 @@
+:root {
+  --bg: #f3f6f9;
+  --surface: #ffffff;
+  --text: #1d2935;
+  --muted: #5a6a78;
+  --primary: #0f4c81;
+  --primary-2: #1a6aa8;
+  --accent: #e5f1fb;
+  --warning: #fff3cd;
+  --warning-border: #e0b100;
+  --success: #eaf6ea;
+  --shadow: 0 10px 25px rgba(17, 41, 67, 0.08);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #f7fafc 0%, #eef4f8 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--primary); }
+img { max-width: 100%; display: block; border-radius: 12px; }
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f4c81 0%, #175f95 100%);
+  color: white;
+  padding: 64px 0 40px;
+}
+
+.eyebrow,
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .82rem;
+  font-weight: 700;
+  opacity: .9;
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.intro {
+  max-width: 1100px;
+  margin: 18px 0 0;
+  font-size: 1.08rem;
+  color: rgba(255,255,255,.92);
+  text-align:justify;
+}
+
+.info-syncmdp {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: lightgray;
+  border-left: 5px solid #2c5aa0;
+  padding: 12px 15px;
+  margin: 15px 0 25px 0;
+  border-radius: 6px;
+}
+
+.info-syncmdp p {
+  margin: 0;
+}
+
+.info-icon {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.hero-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.info-card,
+.faq-grid article {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  backdrop-filter: blur(4px);
+}
+
+.info-card h2,
+.faq-grid h3,
+.step-content h3 {
+  margin: 0 0 8px;
+}
+
+main { padding: 34px 0 60px; }
+
+.alert {
+  background: var(--accent);
+  border-left: 6px solid var(--primary-2);
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.quick-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 24px 0 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button.secondary {
+  background: white;
+  color: var(--primary);
+  border: 1px solid #c8d8e6;
+}
+
+.section-title {
+  margin: 24px 0 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+.steps {
+  display: grid;
+  gap: 22px;
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 18px;
+  background: var(--surface);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.step-number {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.step-content p { margin: 0 0 10px; }
+.step-content figure { margin: 16px 0 0; }
+
+.note,
+.warning {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.note {
+  background: #eef6ff;
+  color: #1c4c73;
+}
+
+.warning {
+  background: var(--warning);
+  border: 1px solid var(--warning-border);
+  color: #6b5200;
+}
+
+.faq {
+  margin-top: 38px;
+}
+
+.faq-grid article {
+  background: var(--surface);
+  border: 1px solid #dbe6ef;
+  box-shadow: var(--shadow);
+}
+
+.site-footer {
+  border-top: 1px solid #d8e1e9;
+  color: var(--muted);
+  padding: 22px 0 36px;
+  background: rgba(255,255,255,.7);
+  text-align: center;
+}
+
+.site-footer p { margin: 0; }
+
+@media (max-width: 800px) {
+  .hero-grid,
+  .faq-grid,
+  .step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .step-number { margin-bottom: 4px; }
+}
